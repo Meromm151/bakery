@@ -1,0 +1,337 @@
+/* general settings */
+:root{
+    --primary: gray;
+    --secondry: #977456;
+    --alt:#EEE;
+}
+body{
+    font-family: 'Alegreya', serif;
+    margin: 0;
+}
+h1 , h2 , h3 {
+    font-weight: normal;
+}
+h2{
+    font-size: 35px;
+}
+p{
+    font-size: 18px;
+    margin-bottom:30px;
+    color: var(--primary);
+}
+a{
+    text-decoration: none;
+    color: var(--primary);
+    transition: 0.5s;
+}
+a:hover{
+    color: black;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+/* nav bar */
+.nav-bar{
+    z-index: 10;
+    background-color: white;
+    position: fixed;
+    font-size: 18px;
+    width: 100%;
+}
+.container{
+    margin: 0 300px;
+}
+.nav-bar .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.nav-bar .logo img{
+    filter: invert(49%) sepia(26%) saturate(584%) hue-rotate(346deg) brightness(92%) contrast(87%);;
+}
+.active a{
+    color: var(--secondry);
+}
+.active a:hover{
+    color: var(--secondry);
+}
+.nav-bar ul{
+    display: flex;
+    white-space: nowrap;
+    margin: 0;
+}
+.nav-bar ul li{
+    position: relative;
+    color: var(--primary);
+    padding: 20px 10px ;
+}
+.nav-bar ul li::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    left: 0px;
+    top: 0;
+}
+.active::before {
+    background-color: var(--secondry);
+}
+.blog{
+    position: relative;
+    padding: 0;
+}
+.nav-bar ul.blog-list {
+    padding: 10px 10px;
+    width: 150px;
+    z-index: -3;
+    color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    top: 52px;
+    opacity: 0%;
+    transition: 0.5s;
+}
+.nav-bar ul.blog-list li {
+    padding: 20px 20px ;
+    width: 100%;
+    opacity: 0%;
+    color: var(--primary);
+    background-color: var(--secondry);
+    transition: 0.5s;
+}
+.blog:hover li{
+    opacity: 100%!important;
+}    
+.blog li:hover{
+    background-color: #f5c05e!important;
+}
+.blog:hover ul{
+    opacity: 100%!important;
+}
+.nav-bar img{
+    max-width: 50%;
+}
+@media (max-width:1000px) {
+    .container{
+        margin: 0 50px;
+    }
+    .nav-bar .content{
+        display: none;
+    }
+    
+}
+/* landing */
+.landing{
+    position: relative;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    height: 900px;
+}
+.landing::before{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0px; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-image: url(/image/landing-3.jpg);
+    background-size: cover;
+    filter:blur(4px) contrast(50%);
+}
+.landing::after{
+    content: "";
+    z-index: 1;
+    position: absolute;
+    bottom: -20px; 
+    left: 0;
+    width: 100%; 
+    height: 10%;
+    background-color: white;
+}
+.landing h1 {
+    margin: 10px 30px ;
+    font-size: 80px!important;
+}
+.landing p{
+    color: white;
+    margin-top: 0;
+    width: 30%;
+}
+.btn button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+.learn-btn , .contact-btn{
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    border-radius: 6px;
+    border-color: transparent;
+    padding: 20px 20px;
+    transition: 0.5s;
+}
+.learn-btn{
+    background-color:#977456;
+}
+.contact-btn{
+    border: 2px solid white;
+}
+/* who we are */
+.who-we-are{
+    padding: 50px 0px;
+    height: 600px;
+}
+.who-we-are .container{
+    display: grid;
+    gap: 100px;
+    grid-template-columns: 1fr 1fr;
+}
+.who-we-are .container img{
+    max-width: 100%;
+}
+.who-we-are li {
+    margin-bottom: 15px;
+}
+.who-we-are i {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--secondry);
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid var(--secondry);
+}
+.who-we-are span{
+    font-size: 20px;
+    color: var(--primary);
+}
+/* our location */
+.our-location{
+    padding: 120px 0px;
+    height: 450px;
+    background-color: var(--alt);
+}
+.our-location .container{
+    display: grid;
+    gap: 100px;
+    grid-template-columns: 1fr 1fr;
+}
+/* our-baking */
+.our-baking{
+    padding: 120px 0px;
+    text-align: center;
+}
+.our-baking .baking-gallary{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.our-baking img{
+    max-width: 100%;
+}
+/* contact-info */
+.contact-info{
+    padding: 120px 0px;
+    height: 520px;
+    background-color: var(--alt);
+}
+
+.contact-info .container{
+    display: grid;
+    gap: 100px;
+    grid-template-columns: 1fr 1fr;
+}
+.contact-info .contact-info-content{
+    display: flex;
+    flex-direction: column;
+}
+.contact-info .image{
+    height: 100%;
+}
+.contact-info img{
+    max-width: 130%;
+}
+.contact-info span{
+    color: var(--primary);
+    font-size: 18px;
+}
+.contact-info i{
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    color: white;
+    background-color: var(--secondry);
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+/* footer */
+footer li{
+    padding: 10px 15px;
+}
+footer .top li:not(:last-child){
+    border-bottom: 1px solid #4a4742;
+}
+footer .top{
+    color: var(--primary);
+    padding: 50px 0px;
+    background-color:#403d38;
+}
+footer .top h3{
+    color: white;
+}
+footer .top .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+footer .top p{
+    line-height: 30px;
+    font-size: 16px!important;
+}
+footer .bottom{
+    color: var(--primary);
+    text-align: center;
+    background-color: #353330;
+    padding: 70px 0;
+}
+footer .bottom .copy-rights{
+    margin-top: 25px;
+}
+footer .bottom ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .bottom ul li{
+    padding: 0;
+}
+footer .bottom ul i{
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    text-align: center;
+    line-height: 40px;
+    background-color: #484540;
+    margin-right: 10px;
+    margin-top: 15px;
+}
